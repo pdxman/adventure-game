@@ -9,8 +9,8 @@ export default function GameStart() {
       updateDirection(directionChosen);
   }
 
-  console.log('direction chosen:', direction);
-  console.log('adventure is:', adventure);
+  // console.log('direction chosen:', direction);
+  // console.log('adventure is:', adventure);
 
   useEffect(() => {
     switch(direction){ 
