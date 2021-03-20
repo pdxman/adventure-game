@@ -2,11 +2,31 @@ import React, { useEffect, useState } from "react";
 
 export default function GameStart() {
   const [direction, updateDirection] = useState("Choose a direction");
-  const [adventure, updateAdventure] = useState("Here is where you are going! Exciting!")
+  const [adventure, updateAdventure] = useState("Here is where you are going! Exciting!");
+
+  const [previousMoves, updatePreviousMoves] = useState([])
+
+  // const staticPreviousMoves = [
+  //   {
+  //     id: 1,
+  //     move: 'left'
+  //   }, 
+  //   {
+  //     id: 3,
+  //     move: 'right'
+  //   },
+  //   {
+  //     id: 3,
+  //     move: 'north'
+  //   }
+  // ]
 
  function changeDirection(event) {
     const directionChosen = event.target.value;
       updateDirection(directionChosen);
+      updatePreviousMoves([...previousMoves, directionChosen]);
+
+      
   }
 
   // console.log('direction chosen:', direction);
@@ -26,28 +46,47 @@ export default function GameStart() {
     }
   }, [direction])
 
+  console.log("the previous moves", previousMoves); 
+
 return (
     <div className="App">
-      <h1>In Search of The Coin of Power...</h1>
-      <div className="base">
-      <h2>You stand in a forest at dusk.</h2>
-      <ul className="base-directions">
-          <li>There is a glow in the woods to the South.</li>
-          <li>There is a log in front of you to the North.</li>
-          <li>There is a stream to the Right.</li>
-          <li>There is darkeness to the Left. You hear something running away.</li>
-      </ul>
-      <h3><strong>{direction}</strong></h3>
-      </div>
-      <div className="input-response">
-      <select id="directions" name="directions" onChange={changeDirection}>
-          <option value="Left">Go Left</option>
-          <option value="Right">Go Right</option>
-          <option value="North">Go North</option>
-          <option value="South">Go South</option>
-        </select>
-        <p><strong>{adventure}</strong></p>
-      </div>  
+     <div className="flex-wrapper">
+      <div className="base-wrap">
+          <div className="base">
+            <h1>In Search of The Coin of Power...</h1>
+            <h2>You stand in a forest at dusk.</h2>
+            <ul className="base-directions">
+                <li>There is a glow in the woods to the South.</li>
+                <li>There is a log in front of you to the North.</li>
+                <li>There is a stream to the Right.</li>
+                <li>There is darkeness to the Left. You hear something running away.</li>
+            </ul>
+            <h3><strong>{direction}</strong></h3>
+          </div>
+          <div className="input-response">
+            <select id="directions" name="directions" onChange={changeDirection}>
+                <option value="Left">Go Left</option>
+                <option value="Right">Go Right</option>
+                <option value="North">Go North</option>
+                <option value="South">Go South</option>
+              </select>
+              <p><strong>{adventure}</strong></p>
+          </div>  
+        </div>
+        <div className="prev-moves-wrap">
+        <h2>Your Moves So Far...</h2>
+          <ul>{
+                previousMoves.map(staticPreviousMove => {
+                  return(<li>{staticPreviousMove}</li>)
+                })   
+            }
+          </ul>
+        </div>
+     </div> 
+     
+     
+    
+    
     </div>
   );
 }

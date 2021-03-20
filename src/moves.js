@@ -40,15 +40,20 @@ export default function GameMoves(){
     console.log('here are the moves: ', moves);
 
     return(
-    <div> test
+    <div className="dynamic-active-moves-wrap">
+        <div className="dynamic-active-moves-left">
+            <h2>Test</h2>
+        </div>
+        <div className="dynamic-active-moves-right">
         <ul>
-        {
-            moves.map(move => {
-                const {title, id, content} = move
-                return(<li key={move.id}>{title.rendered},<br /> {content.rendered}</li>)
-            })
-        }
-        </ul>
+            {
+                moves.map(move => {
+                    const {title, id, content} = move
+                    return(<li key={move.id}>{title.rendered},<br /> {content.rendered}</li>)
+                })
+            }
+            </ul>
+        </div>
     </div>
     )
 }

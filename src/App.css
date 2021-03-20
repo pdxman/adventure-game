@@ -6,13 +6,20 @@ body{
   color: #000;
 }
 
-h1, h3 {
+/* h1, h3 {
   text-align: center;
-}
+} */
 
-.base {max-width: 23em; margin: 0 auto;}
-.base-directions {text-align: left;padding-left: 0; margin-left: 0;  }
+/* .base {max-width: 23em; margin: 0 auto;} */
+.base-directions {text-align: left; padding-left: 0; margin-left: 0;  }
 .base-directions li {list-style: none; padding-left: 0; margin-left: 0; font-weight: bold; font-size:1.2em;  }
 
-.input-response {text-align: center;}
+/* .input-response {text-align: center;} */
 .input-response p {font-size: 1.4em; ;}
+.flex-wrapper { display: flex; }
+.base-wrap { padding: 1em; flex: 1 1 50%; background: #1d638c; }
+.prev-moves-wrap { padding: 1em; order: -1; flex: 1 1 30%; background: #fbc527; position: relative;}
+.prev-moves-wrap li:last-child:after { content: ' : Your latest move'; }
+.dynamic-active-moves-wrap {display: flex; }
+.dynamic-active-moves-left { background: orangered; padding: 1em; flex: 1 1 25%; }
+.dynamic-active-moves-right { background: #546747; padding: 1em; flex: 1 1 70%; }
