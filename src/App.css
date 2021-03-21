@@ -23,3 +23,6 @@ body{
 .dynamic-active-moves-wrap {display: flex; }
 .dynamic-active-moves-left { background: orangered; padding: 1em; flex: 1 1 25%; }
 .dynamic-active-moves-right { background: #546747; padding: 1em; flex: 1 1 70%; }
+
+
+.battle-wrap { padding: 1em; }

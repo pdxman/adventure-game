@@ -59,7 +59,7 @@ return (
                 <li>There is a glow in the woods to the South.</li>
                 <li>There is a log in front of you to the North.</li>
                 <li>There is a stream to the Right.</li>
-                <li>There is darkeness to the Left. You hear something running away.</li>
+                <li>There is darkness to the Left. You hear something running away.</li>
             </ul>
             <h3><strong>{direction}</strong></h3>
           </div>
@@ -77,7 +77,7 @@ return (
         <h2>Your Moves So Far...</h2>
           <ul>{
                 previousMoves.map(staticPreviousMove => {
-                  return(<li>{staticPreviousMove}</li>)
+                  return(<li><strong>{staticPreviousMove}</strong></li>)
                 })   
             }
           </ul>

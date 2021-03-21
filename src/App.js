@@ -2,6 +2,7 @@ import './App.css';
 import React, { useEffect, useState } from "react";
 import GameStart from './gameStart'
 import GameMoves from './moves'
+import Battles from './Battles'
 
 export default function App() {
 
@@ -9,6 +10,7 @@ export default function App() {
     <div className="App">
      <GameStart />
      <GameMoves />
+     <Battles />
     </div>
   );
 }
