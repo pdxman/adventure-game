@@ -49,20 +49,22 @@ export default function GameStart() {
   console.log("the previous moves", previousMoves); 
 
 return (
-    <div className="App">
-     <div className="flex-wrapper">
+    <div>
+      <div className="flex-wrapper">
       <div className="base-wrap">
-          <div className="base">
-            <h1>In Search of The Coin of Power...</h1>
-            <h2>You stand in a forest at dusk.</h2>
-            <ul className="base-directions">
-                <li>There is a glow in the woods to the South.</li>
-                <li>There is a log in front of you to the North.</li>
-                <li>There is a stream to the Right.</li>
-                <li>There is darkness to the Left. You hear something running away.</li>
-            </ul>
-            <h3><strong>{direction}</strong></h3>
-          </div>
+        <div className="border">        
+            <div className="base">
+              <h1>In Search of The Coin of Power...</h1>
+              <h2>You stand in a forest at dusk.</h2>
+              <ul className="base-directions">
+                  <li>There is a glow in the woods to the South.</li>
+                  <li>There is a log in front of you to the North.</li>
+                  <li>There is a stream to the Right.</li>
+                  <li>There is darkness to the Left. You hear something running away.</li>
+              </ul>
+              <h3><strong>{direction}</strong></h3>
+            </div>
+           
           <div className="input-response">
             <select id="directions" name="directions" onChange={changeDirection}>
                 <option value="Left">Go Left</option>
@@ -72,8 +74,10 @@ return (
               </select>
               <p><strong>{adventure}</strong></p>
           </div>  
+          </div>  
         </div>
         <div className="prev-moves-wrap">
+        <div className="knight"></div>
         <h2>Your Moves So Far...</h2>
           <ul>{
                 previousMoves.map(staticPreviousMove => {
@@ -81,6 +85,8 @@ return (
                 })   
             }
           </ul>
+          
+
         </div>
      </div> 
      

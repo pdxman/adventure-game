@@ -8,12 +8,13 @@ export default function Status() {
     const [fire, setFire] = useState(2); 
 
     return(
-        <div className="dynamic-active-moves-left">
+        <div className="dynamic-active-moves-left knight-wrap">
             <h2>Status</h2>
             <p><strong>Weapons:</strong> {weapons}</p>
             <p><strong>Health:</strong>  {health}</p>
             <p><strong>Food:</strong>  {food}</p>
             <p><strong>Fire:</strong>  {fire}</p>
-    </div>
+            <div className="dragon"></div>
+        </div>
     )
 }
