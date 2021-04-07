@@ -5,31 +5,22 @@ export default function Battles() {
     const [battleNum, setBattleNum] = useState(0)
     const [enemyNum, setEnemyNum] = useState(10)
     const [battleStatus, setbattleStatus] = useState('Start the battle')
-    
+
     useEffect(() => {
-       battle()
+        battle()
     }, [])
-
+    
     function battle() {
-        function startBattle() {
-            setBattleNum(Math.floor(Math.random() * 100))
-         }
-
-        function enemyTry() {
-            setEnemyNum(Math.floor(Math.random() * 100))
-        }
-
-        function battleWinner(){
-            battleNum > enemyNum ? setbattleStatus('You win!') : setbattleStatus('You lose your head! SEE YA!')
-            
-        }
-       
-        startBattle();
-        enemyTry();
-        battleWinner();
-        console.log(battleNum, enemyNum)
+        setBattleNum(Math.floor(Math.random() * 100))
+        setEnemyNum(Math.floor(Math.random() * 100))
     } 
 
+    useEffect(() => {
+        battleNum > enemyNum ? setbattleStatus('You win!') : setbattleStatus('You lose your head! SEE YA!')
+    }, [])
+    
+
+    console.log(battleNum, enemyNum, battleStatus)
 
     
 
