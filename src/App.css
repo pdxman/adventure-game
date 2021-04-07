@@ -10,6 +10,8 @@ body{
   text-align: center;
 } */
 
+/* .wrapper { max-width: 89.5em; margin: 0 auto; padding: 0 3rem; overflow: hidden;} */
+
 /* .base {max-width: 23em; margin: 0 auto;} */
 .base-directions {text-align: left; padding-left: 0; margin-left: 0;  }
 .base-directions li {list-style: none; padding-left: 0; margin-left: 0; font-weight: bold; font-size:1.2em;  }

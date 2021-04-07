@@ -8,9 +8,11 @@ export default function App() {
 
  return (
     <div className="App">
-     <GameStart />
-     <GameMoves />
-     <Battles />
+      <div className="wrapper">
+       <GameStart />
+       <GameMoves />
+       <Battles />
+      </div>
     </div>
   );
 }

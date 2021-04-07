@@ -1,31 +1,37 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 export default function Battles() {
     const [battleNum, setBattleNum] = useState(0)
     const [enemyNum, setEnemyNum] = useState(10)
+    const [battleStatus, setbattleStatus] = useState('Start the battle')
     
+    useEffect(() => {
+       battle()
+    }, [])
+
     function battle() {
         function startBattle() {
             setBattleNum(Math.floor(Math.random() * 100))
          }
 
-         function enemyTry() {
+        function enemyTry() {
             setEnemyNum(Math.floor(Math.random() * 100))
         }
 
         function battleWinner(){
-            if (battleNum > enemyNum){
-                alert('You win!')
-            } else {
-                alert('You lose your head! SEE YA!')
-            }
+            battleNum > enemyNum ? setbattleStatus('You win!') : setbattleStatus('You lose your head! SEE YA!')
+            
         }
+       
         startBattle();
         enemyTry();
         battleWinner();
+        console.log(battleNum, enemyNum)
+    } 
 
-    }
+
+    
 
    
 
@@ -36,6 +42,7 @@ export default function Battles() {
              <button onClick={battle}>Start Battle</button>
              <p>Your battle number is: {battleNum}</p>
              <p>Your enemy's number is: {enemyNum}</p>
+             <h3>{battleStatus}</h3>
         </div>
        
     )
