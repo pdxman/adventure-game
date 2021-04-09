@@ -17,7 +17,7 @@ export default function Battles() {
 
     useEffect(() => {
         battleNum > enemyNum ? setbattleStatus('You win!') : setbattleStatus('You lose your head! SEE YA!')
-    }, [])
+    }, [battleNum, enemyNum])
     
 
     console.log(battleNum, enemyNum, battleStatus)
