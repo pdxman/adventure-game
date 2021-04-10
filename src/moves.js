@@ -28,16 +28,7 @@ export default function GameMoves(){
     const empty = moves.length
     console.log('moves from axios:', moves)
     
-    // function showError(empty) {
-    //     if (empty === 0){
-    //         setError(true)
-    //         console.log(error)
-    //     }
-    // }
-
-    // showError(empty);
-
-    return(
+   return(
     <div className="dynamic-active-moves-wrap">
         <Status />
         <div className="dynamic-active-moves-right">
@@ -59,9 +50,3 @@ export default function GameMoves(){
     )
 }
 
-// go look for data
-
-// if there is no data
-// write "there is no data" (the error)
-// if there is data  (the data)
-// show data

@@ -22,10 +22,6 @@ export default function Battles() {
 
     console.log(battleNum, enemyNum, battleStatus)
 
-    
-
-   
-
     return(
         <div className="battle-wrap">
              <h2>Battles</h2>
