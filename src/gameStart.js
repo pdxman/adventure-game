@@ -77,7 +77,7 @@ return (
           </div>  
         </div>
         <div className="prev-moves-wrap">
-        <div className="knight"></div>
+        {/* <div className="knight"></div> */}
         <h2>Your Moves So Far...</h2>
           <ul>{
                 previousMoves.map(staticPreviousMove => {

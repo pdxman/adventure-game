@@ -31,7 +31,7 @@ export default function Status() {
             <p><strong>Food:</strong>  {statusItem.food}</p>
             <p><strong>Fire:</strong>  {statusItem.fire}</p>
             <button onClick={addWeapon} >Click to Get a Free Weapon</button>
-            <div className="dragon"></div>
+            {/* <div className="dragon"></div> */}
         </div>
     )
 }
