@@ -1,12 +1,8 @@
 import React, {useState, useEffect} from 'react'
 
 
-export default function Status() {
-    const [statusItem, setStatusItem] = useState({
-        health: "10",
-        food: "30", 
-        fire: "10"
-    }); 
+export default function Status(props) {
+    const { health, fire, food } = props
 
     const [weapons, setWeapons] = useState([
         "Sword",
@@ -19,10 +15,7 @@ export default function Status() {
 
     const newValue = weapons.includes("Battle Axe");
     console.log('has battle axe:', newValue)
-
-    //newValue ? remove button : keep button
-
-
+    
     return(
         <div className="dynamic-active-moves-left knight-wrap">
             <h2>Status</h2>
@@ -33,11 +26,11 @@ export default function Status() {
                 ))}
             </ul>
             
-            <p><strong>Health:</strong>  {statusItem.health}</p>
-            <p><strong>Food:</strong>  {statusItem.food}</p>
-            <p><strong>Fire:</strong>  {statusItem.fire}</p>
-            <button className="buttonRemove" onClick={addWeapon} >Click to Get a Free Weapon</button>
-            {/* <div className="dragon"></div> */}
+            <p><strong>Health:</strong>  {health}</p>
+            <p><strong>Fire:</strong>  {fire}</p>
+            <p><strong>Food:</strong>  {food}</p>
+           {!newValue ? <button className="buttonRemove" onClick={addWeapon} >Click to Get a Free Weapon</button> : null}
+            <div className="dragon"></div>
         </div>
     )
 }

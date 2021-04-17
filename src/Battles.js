@@ -34,15 +34,3 @@ export default function Battles() {
        
     )
 }
-
-//write function that rewards or subracts status of health based on win or lose
-//win adds 10 health
-//lose subracts 10 health
-//health is located in the status component
-//where would props originate?
-//how would function to add based won win/loss work? (useEfftect?)
-
-//after I add a "free weapon", how to drop that button off??
-    //would I look inside arry to see if "battle axe" was there?
-      //how would I look inisde array to see that one instance
-      // uns includes?

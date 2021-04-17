@@ -3,19 +3,19 @@ import React, { useEffect, useState } from "react";
 import GameStart from './gameStart'
 import GameMoves from './moves'
 import Battles from './Battles'
+import Status from './Status'
 import SomethingWithStateProps from './SomethingWithStateProps'
 
 export default function App() {
 
- const [state, setState] = useState({
-   gold: '30',
-   silver: '50'
- })
+const [health, setHealth] = useState(20)
+const [fire, setFire] = useState(50)
+const [food, setFood] = useState(100)
 
  return (
     <div className="App">
       <div className="wrapper">
-        <SomethingWithStateProps {...state}/>
+        <Status health={health} fire={fire} food={food}/>
         <GameStart />
         <GameMoves />
         <Battles />

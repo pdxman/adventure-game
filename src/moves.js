@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import Status from './Status'
 import parse from "html-react-parser"
 import axios from 'axios'
 
@@ -24,13 +23,14 @@ export default function GameMoves(){
         setLoading(false) 
     }
 
+  
+
     console.log('here are the moves: ', moves);
     const empty = moves.length
     console.log('moves from axios:', moves)
     
    return(
     <div className="dynamic-active-moves-wrap">
-        <Status />
         <div className="dynamic-active-moves-right">
         { loading ? (
             <div><h1>Waiting for Posts</h1></div>
@@ -44,6 +44,7 @@ export default function GameMoves(){
                     )
                 })
             }
+            {error ? <h2>Turn on MAMP!</h2> : null}
             </ul>)}
         </div>
     </div>

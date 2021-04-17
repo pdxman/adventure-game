@@ -6,31 +6,13 @@ export default function GameStart() {
 
   const [previousMoves, updatePreviousMoves] = useState([])
 
-  // const staticPreviousMoves = [
-  //   {
-  //     id: 1,
-  //     move: 'left'
-  //   }, 
-  //   {
-  //     id: 3,
-  //     move: 'right'
-  //   },
-  //   {
-  //     id: 3,
-  //     move: 'north'
-  //   }
-  // ]
-
- function changeDirection(event) {
+function changeDirection(event) {
     const directionChosen = event.target.value;
       updateDirection(directionChosen);
       updatePreviousMoves([...previousMoves, directionChosen]);
 
       
   }
-
-  // console.log('direction chosen:', direction);
-  // console.log('adventure is:', adventure);
 
   useEffect(() => {
     switch(direction){ 
@@ -57,10 +39,10 @@ return (
               <h1>In Search of The Coin of Power...</h1>
               <h2>You stand in a forest at dusk.</h2>
               <ul className="base-directions">
-                  <li>There is a glow in the woods to the South.</li>
-                  <li>There is a log in front of you to the North.</li>
-                  <li>There is a stream to the Right.</li>
-                  <li>There is darkness to the Left. You hear something running away.</li>
+                  <li key="1">There is a glow in the woods to the South.</li>
+                  <li key="2">There is a log in front of you to the North.</li>
+                  <li key="3">There is a stream to the Right.</li>
+                  <li key="4">There is darkness to the Left. You hear something running away.</li>
               </ul>
               <h3><strong>{direction}</strong></h3>
             </div>
@@ -77,7 +59,7 @@ return (
           </div>  
         </div>
         <div className="prev-moves-wrap">
-        {/* <div className="knight"></div> */}
+        <div className="knight"></div>
         <h2>Your Moves So Far...</h2>
           <ul>{
                 previousMoves.map(staticPreviousMove => {
