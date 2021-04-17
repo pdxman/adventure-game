@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 
 export default function Status() {
@@ -17,6 +17,12 @@ export default function Status() {
         setWeapons(weapons => ([...weapons, "Battle Axe"]))
     }
 
+    const newValue = weapons.includes("Battle Axe");
+    console.log('has battle axe:', newValue)
+
+    //newValue ? remove button : keep button
+
+
     return(
         <div className="dynamic-active-moves-left knight-wrap">
             <h2>Status</h2>
@@ -30,7 +36,7 @@ export default function Status() {
             <p><strong>Health:</strong>  {statusItem.health}</p>
             <p><strong>Food:</strong>  {statusItem.food}</p>
             <p><strong>Fire:</strong>  {statusItem.fire}</p>
-            <button onClick={addWeapon} >Click to Get a Free Weapon</button>
+            <button className="buttonRemove" onClick={addWeapon} >Click to Get a Free Weapon</button>
             {/* <div className="dragon"></div> */}
         </div>
     )
